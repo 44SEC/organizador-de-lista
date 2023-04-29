@@ -63,11 +63,21 @@ def rev_list(arr):
 
 
 print('\n')
+
 start_time = time.time()
+
 qs(wordlist, 0, len(wordlist)-1)
-reverse_list = rev_list(wordlist)
-end_time = time.time()
-print(f'[+] Aqui está sua lista ordenada de maneira crescente: {wordlist}')
+with open("QuickSort.txt", "w") as f:
+    f.write(','.join(wordlist))
+
+print(f'[+] Aqui está sua lista ordenada de maneira crescente: {wordlist[:50]}')
 print('\n')
-print(f'[+] Aqui está sua lista ordenada de maneira decrescente: {reverse_list}')
+
+reverse_list = rev_list(wordlist)
+with open("QuickSortRev.txt", "w") as f:
+    f.write(','.join(wordlist))
+
+end_time = time.time()
+
+print(f'[+] Aqui está sua lista ordenada de maneira decrescente: {reverse_list[:50]}')
 print(f'[?] O programa levou: {round(end_time - start_time, 4)} segundo para organizar a lista.')
