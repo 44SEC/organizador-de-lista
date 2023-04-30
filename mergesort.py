@@ -27,9 +27,12 @@ print("------------------//-------------------")
 
 # Definindo a lista
 
-with open("words.txt", "r") as file:
-    wordlist = file.read().split(",")
-    wordlist = [word.lower() for word in wordlist]
+try:
+    with open("words.txt", "r") as file:
+        wordlist = file.read().split(",")
+        wordlist = [word.lower() for word in wordlist]
+except:
+    print('[!] Não foi possível importar a lista, o arquivo está na mesma pasta que o programa?')
 
 ### Criando a funcao de ordenacao
 
@@ -111,16 +114,25 @@ print('\n')
 start_time = time.time()
 
 # Executando a lista alfabeticamente
-mergesort(wordlist)
-with open("MergeSort.txt", "w") as f:
-    f.write(','.join(wordlist))
-print(f'[+] Os 10 primeiros itens da lista ordenada alfabeticamente: {wordlist[:10]} (...)')
+
+try:
+    mergesort(wordlist)
+    with open("MergeSort.txt", "w") as f:
+        f.write(','.join(wordlist))
+    print(f'[+] Os 10 primeiros itens da lista ordenada alfabeticamente: {wordlist[:10]} (...)')
+except:
+    print('[!] Não foi possível organizar as listas, tente novamente...')
 
 # Executando a lista alfabeticamente invertida
-mergesortrev(wordlist)
-with open("MergeSortRev.txt", "w") as f:
-    f.write(','.join(wordlist))
-print(f'[+] Os 10 primeiros itens da lista ordenada invertida: {wordlist[:10]} (...)')
+
+try:
+    mergesortrev(wordlist)
+    with open("MergeSortRev.txt", "w") as f:
+        f.write(','.join(wordlist))
+    print(f'[+] Os 10 primeiros itens da lista ordenada invertida: {wordlist[:10]} (...)')
+except:
+     print('[!] Não foi possível organizar as listas, tente novamente...')
+   
 
 end_time = time.time()
 

@@ -24,10 +24,12 @@ print("------------------//-------------------")
 import time
 
 ### Definido a lista
-
-with open("words.txt", "r") as file:
-    wordlist = file.read().split(',')
-    wordlist = [word.lower() for word in wordlist]
+try:
+    with open("words.txt", "r") as file:
+        wordlist = file.read().split(',')
+        wordlist = [word.lower() for word in wordlist]
+except:
+    print('[!] Não foi possível importar a lista, o arqivo está na mesma pasta que o programa?')
 
 ### Criando as funcoes de ordenacao
 
@@ -58,18 +60,24 @@ start_time = time.time()
 
 # Ordenando a lista alfabeticamente
 
-bubblesort(wordlist)
-with open("BubbleSort.txt", "w") as f:
-    f.write(','.join(wordlist))
-print(f'[+] Aqui está os 10 primeiros itens da lista ordenados alfabeticamente: {wordlist[:10]}')
+try:
+    bubblesort(wordlist)
+    with open("BubbleSort.txt", "w") as f:
+        f.write(','.join(wordlist))
+    print(f'[+] Aqui está os 10 primeiros itens da lista ordenados alfabeticamente: {wordlist[:10]}')
+except:
+    print('[!] Não foi possível organizar as listas, tente novamente...')
 
 # Ordenando a lista inversa
 
-bubblesortrev(wordlist)
-with open("BubbleSortRev.txt", "w") as f:
-    f.write(','.join(wordlist))
-print(f'[+] Aqui está os 10 primeiros itens da lista inversa: {wordlist[:10]}')
-
+try:
+    bubblesortrev(wordlist)
+    with open("BubbleSortRev.txt", "w") as f:
+        f.write(','.join(wordlist))
+    print(f'[+] Aqui está os 10 primeiros itens da lista inversa: {wordlist[:10]}')
+except:
+     print('[!] Não foi possível organizar as listas, tente novamente...')
+   
 end_time = time.time()
 
 print(f'[!] O programa demorou {round(end_time - start_time, 4)} segundo para executar o algoritmo!')

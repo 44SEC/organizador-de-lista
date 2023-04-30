@@ -24,10 +24,12 @@ print("------------------//-------------------")
 
 
 # Definido a lista
-
-with open("words.txt", "r") as file:
-    wordlist = file.read().split(",")
-    wordlist = [word.lower() for word in wordlist]
+try:
+    with open("words.txt", "r") as file:
+        wordlist = file.read().split(",")
+        wordlist = [word.lower() for word in wordlist]
+except:
+    print('[!] Não foi possível importar a lista, o arquivo está na mesma pasta que o programa?')
 
 ### Criando as funcoes de ordenacao
 
@@ -71,17 +73,24 @@ start_time = time.time()
 
 # Ordenando a lista alfabeticamente
 
-qs(wordlist, 0, len(wordlist)-1)
-with open("QuickSort.txt", "w") as f:
-    f.write(','.join(wordlist))
-print(f'[+] Aqui está os 10 primeiros itens da lista ordenada alfabeticamente: {wordlist[:10]}')
+try:
+    qs(wordlist, 0, len(wordlist)-1)
+    with open("QuickSort.txt", "w") as f:
+        f.write(','.join(wordlist))
+    print(f'[+] Aqui está os 10 primeiros itens da lista ordenada alfabeticamente: {wordlist[:10]}')
+except:
+    print('[!] Não foi possível organizar as listas, tente novamente...')
 
 # Ordenando a lista de forma reversa
 
-reverse_list = rev_list(wordlist)
-with open("QuickSortRev.txt", "w") as f:
-    f.write(','.join(wordlist))
-print(f'[+] Aqui está os 10 primeiros itens da lista invertida: {reverse_list[:10]}')
+try:
+    reverse_list = rev_list(wordlist)
+    with open("QuickSortRev.txt", "w") as f:
+        f.write(','.join(wordlist))
+    print(f'[+] Aqui está os 10 primeiros itens da lista invertida: {reverse_list[:10]}')
+except:
+    print('[!] Não foi possível organizar as listas, tente novamente...')
+
 
 end_time = time.time()
 
