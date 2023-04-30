@@ -137,5 +137,6 @@ except:
 end_time = time.time()
 
 # Imprimindo o resultado final
-print(f'[?] O programa demorou {round(end_time - start_time, 4)} segundo para executar o algoritmo!')
+
+print(f'[?] O programa levou: {round(end_time - start_time, 4)} segundo para executar o algoritmo!')
 print('[INFO] A lista completa com 1000 itens está organizada em dois arquivos: MergeSort.txt e MergeSortRev.txt')
