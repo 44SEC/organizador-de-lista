@@ -59,25 +59,33 @@ def rev_list(arr):
 
     return arr
 
-### Imprimindo o resultado final
+### Organizando as listas e imprimindo o resultado final
 
-
+print('[!] Organizando as listas...')
+time.sleep(2)
 print('\n')
 
+# BENCHMARK
+
 start_time = time.time()
+
+# Ordenando a lista alfabeticamente
 
 qs(wordlist, 0, len(wordlist)-1)
 with open("QuickSort.txt", "w") as f:
     f.write(','.join(wordlist))
+print(f'[+] Aqui está os 10 primeiros itens da lista ordenada alfabeticamente: {wordlist[:10]}')
 
-print(f'[+] Aqui está sua lista ordenada de maneira crescente: {wordlist[:50]}')
-print('\n')
+# Ordenando a lista de forma reversa
 
 reverse_list = rev_list(wordlist)
 with open("QuickSortRev.txt", "w") as f:
     f.write(','.join(wordlist))
+print(f'[+] Aqui está os 10 primeiros itens da lista invertida: {reverse_list[:10]}')
 
 end_time = time.time()
 
-print(f'[+] Aqui está sua lista ordenada de maneira decrescente: {reverse_list[:50]}')
-print(f'[?] O programa levou: {round(end_time - start_time, 4)} segundo para organizar a lista.')
+# Imprimindo o resultado
+
+print(f'[?] O programa levou: {round(end_time - start_time, 4)} segundo para executar o algoritmo!')
+print('[INFO] A lista completa com 1000 itens está organizada em dois arquivos: QuickSort.txt e QuickSortRev.txt')
