@@ -29,7 +29,7 @@ try:
         wordlist = file.read().split(',')
         wordlist = [word.lower() for word in wordlist]
 except:
-    print('[!] Não foi possível importar a lista, o arqivo está na mesma pasta que o programa?')
+    print('[!] Não foi possível importar a lista, o arquivo está na mesma pasta que o programa?')
 
 ### Criando as funcoes de ordenacao
 
