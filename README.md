@@ -47,13 +47,66 @@ Para verificar o desempenho do alrotmos escolhidos adicionamos a função "time"
 
 # Funcionalidades e Demonstração da aplicação
 
-* Para executar o programa, inicie primeiro o interpretador com o comando py ou python3, no windows powershell ou no terminal do seu sistema operacional.
+## Funcionamento dos algoritmos
 
-* Clone o repositório no diretório desejado....
+Os programas funcionam lendo uma wordlist .txt, criada a partir de outro arquivo utilizando um script em python (catting.py) que retira as 1000 primeiras palavras deste arquivo (No caso, as 1000 primeiras palavras da wordlist *"rockyou.txt"*) e as adiciona em um arquivo novo chamado *"words.txt"*. Os algoritmos principais começam lendo este arquivo "words.txt" e criando uma lista com as palavras contidas nele.
+
+Foram utilizados três algoritmos para a criação deste projeto: BubbleSort, MergeSort e QuickSort.
+
+### Bubble Sort
+
+O algoritmo Bubble Sort é um algoritmo de ordenação simples que percorre repetidamente uma lista de itens várias vezes. A ideia é comparar os itens adjacentes e trocá-los de posição se estiverem na ordem errada. O processo de ordenação continua até que não haja mais trocas a serem feitas, o que indica que a lista está ordenada. O nome "bubble" vem da ideia de que os itens maiores "borbulham" para a parte superior da lista, enquanto os menores "afundam" para a parte inferior.
+
+**Bubble Sort funciona em 6 passos:**
+
+1. Inicia-se um loop que percorre toda a lista de itens;
+2. Dentro deste loop, incia-se outro loop que percorre a lista novamente, comparando cada par de itens adjacentes;
+3. Se o item à esquerda for maior que o item à direita, as posições são invertidas;
+4. Este processo segue até o final da lista;
+5. Os passos 2 e 4 são repetidos para cada item da lista;
+6. Se em uma iteração completa pelo loop nenhuma troca for feita, a lista está ordenada e o algoritmo pode ser interrompido.
+
+Bubble Sort não é um algoritmo recomendado para ordenar grandes quantidades de dados, porque sua complexidade de tempo é *O(n^2)*. Ou seja, **o tempo que o algoritmo leva para executar cresce de forma proporcional ao quadrado dos dados de entrada.** Por exemplo: caso o algoritmo esteja trabalhando com uma lista de 4 itens, supondo que o algoritmo leva 2ms para ser executado em cada item da lista, o algoritmo levaria 8^2ms para terminar de executar. Em pequenas quantidades, o Bubble Sort é suficiente, porém em grandes quantidades de dados é necessário um algoritmo mais eficiente.
+
+### Merge Sort
+
+Este algoritmo é eficiente porque segue a ideia de "dividir para conquistar". A ideia central é dividir a lista não ordenada em pedaços menores, ordená-los e, em seguida, combiná-los de volta em uma lista ordenada.
+
+**Merge Sort funciona em 4 passos:**
+
+1. A lista é dividida de forma não ordenada em duas metades iguais;
+2. Repete-se o processo de divisão até que se tenha uma lista de apenas um item;
+3. É combinado duas sublistas ordenadas em uma única lista ordenada. Para fazer isso, compara-se o primeiro elemento de cada sublista e o menor é inserido em uma nova lista. Em seguida, avança-se para o próximo elemento da sublista de onde o elemento foi retirado. O processo é repetido até que ambas as sublistas tenham sido completamente adicionadas à nova lista;
+4. Repete-se o processo de combinação até que se tenha apenas uma lista ordenada.
+
+A complexidade de tempo do Merge Sort é O(n log n), ou seja, ele é muito mais eficiente que o Bubble Sort, porque o tempo de execução do algoritmo aumenta de forma proporcional ao produto do tamanho dos dados de entrada. Porém, frente a um algoritmo que opera in-place, Merge Sort consome mais memória.
+
+### Quick Sort
+
+O algoritmo Quick Sort divide a lista de entrada em duas *partições*, recursivamente ordena essas partições e, em seguida, as mescla para produzir a lista final ordenada.
+
+**Quick Sort funciona em 4 passos:**
+
+1. É escolhido um elemento da lista de entrada, que será chamado de "pivô";
+2. Em seguida, a lista é dividida em duas partições: uma contendo elementos menores que o pivô e outra contendo elementos maiores que o pivô;
+3. Recursivamente, as duas partições são ordenadas, usando o mesmo algoritmo Quick Sort;
+4. Por fim, as duas partições ordenadas são unidas para produzir a lista final.
+
+A complexidade de tempo médio do Quick Sort é *O(n log n)*. Mesmo tendo a mesma complexidade de tempo média, Quick Sort e Merge Sort não operam na mesma velocidade por múltiplas razões. Uma dessas razões é que Merge Sort é um algoritmo que precisa criar uma lista temporária enquanto organiza a lista original, consumindo mais espaço na memória, já Quick Sort é um algoritmo in-place, por tanto não utiliza de uma estrutura de dados auxiliar, conseguindo consumir menos memória.
+
+## Execução
+
+* Primeiro, clone o repositório no diretório desejado, utilizando o git bash, caso esteja no Windows, ou diretamente pelo terminal Linux/MacOS, com o comando:
+```git clone https://github.com/44SEC/organizador-de-lista.git```
+* Em seguida, utilizando um terminal, vá para o diretório onde foi baixado o repositório:
+```cd /caminho/para/o/diretorio/```
+* É possível executar cada algoritmo individualmente, utilizando o comando ```py {nome_do_arquivo}.py``` no Windows ou ```python3 {nome_do_arquivo}.py``` no Linux. No MacOS, ```python {nome_do_arquivo}.py```.
+* Também é possível executar um script powershell ou shellscript para executar um *benchmark* dos 3 algoritmos e exibir apenas seu tempo de execução. No Linux e MacOS, utilize o comando: ```sh run.sh```. No Windows, abra seu terminal Powershell e utilize o comando ```./run.ps1```.
+* Cada algoritmo cria, no final de sua execução, um arquivo .txt na mesma pasta em que está localizado. Este arquivo .txt possuí as 1000 palavras da lista organizadas.
 
 # Tecnologias utilizadas
 
-Para a realização da organização das listas, utilizamos a implementação de três algoritmos de ordenação. Além disso para contagem do tempo de execução, foi utilizada afunção "time" importando sua biblioteca. No código fonte da aplicação, feita em python 3.11 encontram-se funções de laço "for", "def" para definir e nomear nova função,"print" para exibir mensagens ao usuário, "if" para tomada de decisões além de "trys" e "execpt" para tratamento de execessão. Uma Shell Script foi criada, para a automação da execução das aplicações de ordanações, onde se rotorna o resultado de cada uma  
+Para a realização da organização das listas, utilizamos a implementação de três algoritmos de ordenação. Além disso, para contagem do tempo de execução, foi utilizado o módulo time. No código fonte da aplicação, feita em python 3.11, encontram-se funções de laço "for", "def" para definir funções,"print" para exibir mensagens ao usuário, "if" para tomada de decisões além de "try" e "execpt" para tratamento de execessão. Um Shell Script foi criada, para a automação da execução das aplicações de ordanações, onde se rotorna o resultado de cada uma, juntamente com um script powershell que executa a mesma função no sistema Windows.
 
 # Link de vídeao explicativo
 
