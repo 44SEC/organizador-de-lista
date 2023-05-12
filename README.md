@@ -27,7 +27,7 @@
 
 # Descrição do Projeto
 
-O presente projeto tem como objetivo realizar a organização de listas através de algorítmos de ordenação, sem utilizar a função "Sort". Para a compisição da aplicação foram escolhidos três alrítmos que a realizam a função retornando ao usuário uma lista organizada de forma alfanumérica.
+O presente projeto tem como objetivo realizar a organização de listas através de algoritmos de ordenação, sem utilizar a função "Sort". Para a composição da aplicação foram escolhidos três algoritmos que a realizam a função, retornando ao usuário uma lista organizada de forma alfanumérica.
 
 # Status do Projeto
 
@@ -35,7 +35,7 @@ O projeto foi desenvolvido mediante a proposta de trabalho do professor Fábio C
 
 # Os algoritmos sort
 
-Os algoritimos de ordenação, também conhecidos como "sort", são conjuntos de instruções que colocam os elementos em uma certa ordem. Estes buscam as informações em uma array ou lista indicada e ordenam de forma prédifinida, como alfanumérica, numérica ou alfabética.    
+Os algoritmos de ordenação, também conhecidos como "sort", são conjuntos de instruções que colocam os elementos em uma certa ordem. Estes buscam as informações em uma array ou lista indicada e ordenam de forma pré-definida, como alfanumérica, numérica ou alfabética.    
 
 # Formas de organização
 
@@ -43,7 +43,7 @@ Existem vários algorítimos diferentes, alguns são mais apropriados para uma s
 
 # Contagem do tempo de execução
 
-Para verificar o desempenho do alrotmos escolhidos adicionamos a função "time". Está conta o tempo de execução de cada um dos três algoritmos implementados no código e retorna o tempo processamento de cada um diante da lista proposta. 
+Para verificar o desempenho dos algoritmos escolhidos adicionamos a função "time". Esta conta o tempo de execução de cada um dos três algoritmos implementados no código e retorna o tempo processamento de cada um diante da lista proposta. 
 
 # Funcionalidades e Demonstração da aplicação
 
@@ -97,16 +97,38 @@ A complexidade de tempo médio do Quick Sort é *O(n log n)*. Mesmo tendo a mesm
 ## Execução
 
 * Primeiro, clone o repositório no diretório desejado, utilizando o git bash, caso esteja no Windows, ou diretamente pelo terminal Linux/MacOS, com o comando:
-```git clone https://github.com/44SEC/organizador-de-lista.git```
+```
+git clone https://github.com/44SEC/organizador-de-lista.git
+```
 * Em seguida, utilizando um terminal, vá para o diretório onde foi baixado o repositório:
-```cd /caminho/para/o/diretorio/```
-* É possível executar cada algoritmo individualmente, utilizando o comando ```py {nome_do_arquivo}.py``` no Windows ou ```python3 {nome_do_arquivo}.py``` no Linux. No MacOS, ```python {nome_do_arquivo}.py```.
-* Também é possível executar um script powershell ou shellscript para executar um *benchmark* dos 3 algoritmos e exibir apenas seu tempo de execução. No Linux e MacOS, utilize o comando: ```sh run.sh```. No Windows, abra seu terminal Powershell e utilize o comando ```./run.ps1```.
+```
+cd /caminho/para/o/diretorio/
+```
+* É possível executar cada algoritmo individualmente, utilizando o comando 
+```
+* py {nome_do_arquivo}.py
+``` 
+no Windows ou 
+```
+* python3 {nome_do_arquivo}.py
+``` 
+* no Linux. No MacOS, 
+```
+* python {nome_do_arquivo}.py
+```
+* Também é possível executar um script powershell ou shellscript para executar um *benchmark* dos 3 algoritmos e exibir apenas seu tempo de execução. No Linux e MacOS, utilize o comando: 
+```
+* sh run.sh
+```
+No Windows, abra seu terminal Powershell e utilize o comando 
+```
+* ./run.ps1
+```
 * Cada algoritmo cria, no final de sua execução, um arquivo .txt na mesma pasta em que está localizado. Este arquivo .txt possuí as 1000 palavras da lista organizadas.
 
 # Tecnologias utilizadas
 
-Para a realização da organização das listas, utilizamos a implementação de três algoritmos de ordenação. Além disso, para contagem do tempo de execução, foi utilizado o módulo time. No código fonte da aplicação, feita em python 3.11, encontram-se funções de laço "for", "def" para definir funções,"print" para exibir mensagens ao usuário, "if" para tomada de decisões além de "try" e "execpt" para tratamento de execessão. Um Shell Script foi criada, para a automação da execução das aplicações de ordanações, onde se rotorna o resultado de cada uma, juntamente com um script powershell que executa a mesma função no sistema Windows.
+Para a realização da organização das listas, utilizamos a implementação de três algoritmos de ordenação. Além disso, para contagem do tempo de execução, foi utilizado o módulo time. No código fonte da aplicação, feita em python 3.11, encontram-se funções de laço "for", "def" para definir funções,"print" para exibir mensagens ao usuário, "if" para tomada de decisões além de "try" e "execpt" para tratamento de execessão. Uma Shell Script foi criada, para a automação da execução das aplicações de ordanações, onde se rotorna o resultado de cada uma, juntamente com um script powershell que executa a mesma função no sistema Windows.
 
 # Link de vídeao explicativo
 
