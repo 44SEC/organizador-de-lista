@@ -14,6 +14,7 @@
 * [Badges](#badges)
 * [Índice](#índice)
 * [Descrição do Projeto](#descrição-do-projeto)
+* [Vídeo Explicativo](#vídeo-explicativo)
 * [Status do Projeto](#status-do-projeto)
 * [Os algoritmos sort](#os-algoritmos-sort)
 * [Formas de organização](#formas-de-organização)
@@ -28,6 +29,10 @@
 # Descrição do Projeto
 
 O presente projeto tem como objetivo realizar a organização de listas através de algoritmos de ordenação, sem utilizar a função "Sort". Para a composição da aplicação foram escolhidos três algoritmos que a realizam a função, retornando ao usuário uma lista organizada de forma alfanumérica.
+
+# Vídeo Explicativo
+
+* https://www.youtube.com/watch?v=WyYauB-P-mM
 
 # Status do Projeto
 
